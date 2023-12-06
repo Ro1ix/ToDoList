@@ -1,7 +1,14 @@
-﻿namespace ToDoList.ViewModels
+﻿using ToDoList.Services;
+
+namespace ToDoList.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        public string Greeting => "Welcome to Avalonia!";
+        public MainWindowViewModel()
+        {
+            var service = new ToDoListService();
+            ToDoList = new ToDoListViewModel(service.GetItems());
+        }
+        public ToDoListViewModel ToDoList { get; }
     }
 }
