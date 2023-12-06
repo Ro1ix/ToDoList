@@ -9,11 +9,5 @@
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
         Title="Avalonia To Do List">
-
-    <Design.DataContext>
-        <vm:MainWindowViewModel/>
-    </Design.DataContext>
-
-    <views:ToDoListView/>
-
+    <views:ToDoListView DataContext="{Binding ToDoList}"/>
 </Window>
